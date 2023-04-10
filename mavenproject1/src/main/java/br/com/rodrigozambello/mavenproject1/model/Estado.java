@@ -11,20 +11,27 @@ import java.util.ArrayList;
  * @author rodrigo
  */
 public class Estado {
+    private Pais pais;
     private int cdEstado;
     private String nmEstado;
-    private String uf;
-    private ArrayList<Cidade> cidade;
+    private String siglaUf;
 
     public Estado() {
-        this.cidade = new ArrayList<>();
     }
 
-    public Estado(int cdEstado, String nmEstado, String uf, ArrayList<Cidade> cidade) {
+    public Estado(Pais pais, int cdEstado, String nmEstado, String siglaUf) {
+        this.pais = pais;
         this.cdEstado = cdEstado;
         this.nmEstado = nmEstado;
-        this.uf = uf;
-        this.cidade = cidade;
+        this.siglaUf = siglaUf;
+    }
+
+    public Pais getPais() {
+        return pais;
+    }
+
+    public void setPais(Pais pais) {
+        this.pais = pais;
     }
 
     public int getCdEstado() {
@@ -43,27 +50,21 @@ public class Estado {
         this.nmEstado = nmEstado;
     }
 
-    public String getUf() {
-        return uf;
+    public String getSiglaUf() {
+        return siglaUf;
     }
 
-    public void setUf(String uf) {
-        this.uf = uf;
-    }
-
-    public ArrayList<Cidade> getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(ArrayList<Cidade> cidade) {
-        this.cidade = cidade;
+    public void setSiglaUf(String siglaUf) {
+        this.siglaUf = siglaUf;
     }
 
     @Override
     public String toString() {
-        return "Estado{" + "cdEstado=" + cdEstado + ", nmEstado=" + nmEstado + ""
-                + ", uf=" + uf + ", cidade=" + cidade + '}';
+        return "Estado{" +
+                "pais=" + pais +
+                ", cdEstado=" + cdEstado +
+                ", nmEstado='" + nmEstado + '\'' +
+                ", siglaUf='" + siglaUf + '\'' +
+                '}';
     }
-    
-    
 }

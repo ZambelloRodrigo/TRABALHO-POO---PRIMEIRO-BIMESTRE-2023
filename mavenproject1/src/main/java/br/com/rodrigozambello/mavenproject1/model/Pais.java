@@ -9,17 +9,14 @@ package br.com.rodrigozambello.mavenproject1.model;
  * @author rodrigo
  */
 public class Pais {
-    private int cdPais;
-    private String nmPais;
-    private Estado estado;
+  private int cdPais;
+  private String nmPais;
 
     public Pais() {
     }
-
-    public Pais(int cdPais, String nmPais, Estado estado) {
+    public Pais(int cdPais, int nmPais) {
         this.cdPais = cdPais;
         this.nmPais = nmPais;
-        this.estado = estado;
     }
 
     public int getCdPais() {
@@ -30,26 +27,18 @@ public class Pais {
         this.cdPais = cdPais;
     }
 
-    public String getNmPais() {
+    public int getNmPais() {
         return nmPais;
     }
 
-    public void setNmPais(String nmPais) {
+    public void setNmPais(int nmPais) {
         this.nmPais = nmPais;
     }
-
-    public Estado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
-    }
-
     @Override
     public String toString() {
-        return "Pais{" + "cdPais=" + cdPais + ", nmPais=" + nmPais + ", estado=" + estado + '}';
+        return "Pais{" +
+                "cdPais=" + cdPais +
+                ", nmPais=" + nmPais +
+                '}';
     }
-    
-    
 }
