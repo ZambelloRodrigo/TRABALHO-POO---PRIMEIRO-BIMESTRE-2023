@@ -14,7 +14,7 @@ public class Pais {
 
     public Pais() {
     }
-    public Pais(int cdPais, int nmPais) {
+    public Pais(int cdPais, String nmPais) {
         this.cdPais = cdPais;
         this.nmPais = nmPais;
     }
@@ -27,13 +27,14 @@ public class Pais {
         this.cdPais = cdPais;
     }
 
-    public int getNmPais() {
+    public String getNmPais() {
         return nmPais;
     }
 
-    public void setNmPais(int nmPais) {
+    public void setNmPais(String nmPais) {
         this.nmPais = nmPais;
     }
+
     @Override
     public String toString() {
         return "Pais{" +

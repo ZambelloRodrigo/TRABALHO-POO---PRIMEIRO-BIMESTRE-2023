@@ -9,7 +9,7 @@ package br.com.rodrigozambello.mavenproject1.model;
  * @author rodrigo
  */
 public class Endereco {
-    private Cidade cidade;
+    private Bairro bairro;
     private int cdEndereco;
     private String nmRua;
     private String nmBairro;
@@ -18,20 +18,20 @@ public class Endereco {
     public Endereco() {
     }
 
-    public Endereco(Cidade cidade, int cdEndereco, String nmRua, String nmBairro, int nrRua) {
-        this.cidade = cidade;
+    public Endereco(Bairro bairro, int cdEndereco, String nmRua, String nmBairro, int nrRua) {
+        this.bairro = bairro;
         this.cdEndereco = cdEndereco;
         this.nmRua = nmRua;
         this.nmBairro = nmBairro;
         this.nrRua = nrRua;
     }
 
-    public Cidade getCidade() {
-        return cidade;
+    public Bairro getBairro() {
+        return bairro;
     }
 
-    public void setCidade(Cidade cidade) {
-        this.cidade = cidade;
+    public void setBairro(Bairro bairro) {
+        this.bairro = bairro;
     }
 
     public int getCdEndereco() {
@@ -69,7 +69,7 @@ public class Endereco {
     @Override
     public String toString() {
         return "Endereco{" +
-                "cidade=" + cidade +
+                "bairro=" + bairro +
                 ", cdEndereco=" + cdEndereco +
                 ", nmRua='" + nmRua + '\'' +
                 ", nmBairro='" + nmBairro + '\'' +

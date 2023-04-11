@@ -5,6 +5,9 @@
 
 package br.com.rodrigozambello.mavenproject1;
 
+import br.com.rodrigozambello.mavenproject1.model.Estado;
+import br.com.rodrigozambello.mavenproject1.model.Pais;
+
 /**
  *
  * @author rodrigo
@@ -12,6 +15,7 @@ package br.com.rodrigozambello.mavenproject1;
 public class Main {
 
     public static void main(String[] args) {
-        System.out.println("Hello World!");
+        Pais pais = new Pais(1, "Brasil");
+
     }
 }
