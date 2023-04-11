@@ -9,27 +9,29 @@ package br.com.rodrigozambello.mavenproject1.model;
  * @author rodrigo
  */
 public class Endereco {
+    private Cidade cidade;
     private int cdEndereco;
     private String nmRua;
-    private int nrCasa;
-    private int cep;
-    private Bairro bairro;
-    private Cidade cidade;
-    private Estado estado;
-    private Pais pais;
+    private String nmBairro;
+    private int nrRua;
 
     public Endereco() {
     }
 
-    public Endereco(int cdEndereco, String nmRua, int nrCasa, int cep, Bairro bairro, Cidade cidade, Estado estado, Pais pais) {
+    public Endereco(Cidade cidade, int cdEndereco, String nmRua, String nmBairro, int nrRua) {
+        this.cidade = cidade;
         this.cdEndereco = cdEndereco;
         this.nmRua = nmRua;
-        this.nrCasa = nrCasa;
-        this.cep = cep;
-        this.bairro = bairro;
+        this.nmBairro = nmBairro;
+        this.nrRua = nrRua;
+    }
+
+    public Cidade getCidade() {
+        return cidade;
+    }
+
+    public void setCidade(Cidade cidade) {
         this.cidade = cidade;
-        this.estado = estado;
-        this.pais = pais;
     }
 
     public int getCdEndereco() {
@@ -48,57 +50,30 @@ public class Endereco {
         this.nmRua = nmRua;
     }
 
-    public int getNrCasa() {
-        return nrCasa;
+    public String getNmBairro() {
+        return nmBairro;
     }
 
-    public void setNrCasa(int nrCasa) {
-        this.nrCasa = nrCasa;
+    public void setNmBairro(String nmBairro) {
+        this.nmBairro = nmBairro;
     }
 
-    public int getCep() {
-        return cep;
+    public int getNrRua() {
+        return nrRua;
     }
 
-    public void setCep(int cep) {
-        this.cep = cep;
-    }
-
-    public Bairro getBairro() {
-        return bairro;
-    }
-
-    public void setBairro(Bairro bairro) {
-        this.bairro = bairro;
-    }
-
-    public Cidade getCidade() {
-        return cidade;
-    }
-
-    public void setCidade(Cidade cidade) {
-        this.cidade = cidade;
-    }
-
-    public Estado getEstado() {
-        return estado;
-    }
-
-    public void setEstado(Estado estado) {
-        this.estado = estado;
-    }
-
-    public Pais getPais() {
-        return pais;
-    }
-
-    public void setPais(Pais pais) {
-        this.pais = pais;
+    public void setNrRua(int nrRua) {
+        this.nrRua = nrRua;
     }
 
     @Override
     public String toString() {
-        return "Endereco{" + "cdEndereco=" + cdEndereco + ", nmRua=" + nmRua + ", nrCasa=" + nrCasa + ", cep=" + cep + ", bairro=" + bairro + ", cidade=" + cidade + ", estado=" + estado + ", pais=" + pais + '}';
+        return "Endereco{" +
+                "cidade=" + cidade +
+                ", cdEndereco=" + cdEndereco +
+                ", nmRua='" + nmRua + '\'' +
+                ", nmBairro='" + nmBairro + '\'' +
+                ", nrRua=" + nrRua +
+                '}';
     }
-    
 }

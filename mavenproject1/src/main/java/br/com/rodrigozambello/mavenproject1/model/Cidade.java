@@ -9,29 +9,28 @@ package br.com.rodrigozambello.mavenproject1.model;
  * @author rodrigo
  */
 public class Cidade {
+
+    private Estado estado;
     private int cdCidade;
     private String nmCidade;
-    private Bairro bairro;
 
     public Cidade() {
     }
 
-    public Cidade(int cdCidade, String nmCidade) {
+    public Cidade(Estado estado, int cdCidade, String nmCidade) {
+        this.estado = estado;
         this.cdCidade = cdCidade;
         this.nmCidade = nmCidade;
-        this.bairro = bairro;
     }
 
-    public Bairro getBairro() {
-        return bairro;
+    public Estado getEstado() {
+        return estado;
     }
 
-    public void setBairro(Bairro bairro) {
-        this.bairro = bairro;
+    public void setEstado(Estado estado) {
+        this.estado = estado;
     }
 
-    
-    
     public int getCdCidade() {
         return cdCidade;
     }
@@ -50,8 +49,10 @@ public class Cidade {
 
     @Override
     public String toString() {
-        return "Cidade{" + "cdCidade=" + cdCidade + ", nmCidade=" + nmCidade + '}';
+        return "Cidade{" +
+                "estado=" + estado +
+                ", cdCidade=" + cdCidade +
+                ", nmCidade='" + nmCidade + '\'' +
+                '}';
     }
-    
-    
 }

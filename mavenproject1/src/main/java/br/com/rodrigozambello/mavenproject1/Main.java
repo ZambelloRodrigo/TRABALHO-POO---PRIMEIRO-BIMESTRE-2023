@@ -9,7 +9,7 @@ package br.com.rodrigozambello.mavenproject1;
  *
  * @author rodrigo
  */
-public class main {
+public class Main {
 
     public static void main(String[] args) {
         System.out.println("Hello World!");
