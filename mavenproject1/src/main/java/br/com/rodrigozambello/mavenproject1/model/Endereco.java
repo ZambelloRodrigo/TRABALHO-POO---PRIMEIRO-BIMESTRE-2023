@@ -12,17 +12,15 @@ public class Endereco {
     private Bairro bairro;
     private int cdEndereco;
     private String nmRua;
-    private String nmBairro;
     private int nrRua;
 
     public Endereco() {
     }
 
-    public Endereco(Bairro bairro, int cdEndereco, String nmRua, String nmBairro, int nrRua) {
+    public Endereco(Bairro bairro, int cdEndereco, String nmRua, int nrRua) {
         this.bairro = bairro;
         this.cdEndereco = cdEndereco;
         this.nmRua = nmRua;
-        this.nmBairro = nmBairro;
         this.nrRua = nrRua;
     }
 
@@ -50,14 +48,6 @@ public class Endereco {
         this.nmRua = nmRua;
     }
 
-    public String getNmBairro() {
-        return nmBairro;
-    }
-
-    public void setNmBairro(String nmBairro) {
-        this.nmBairro = nmBairro;
-    }
-
     public int getNrRua() {
         return nrRua;
     }
@@ -72,7 +62,6 @@ public class Endereco {
                 "bairro=" + bairro +
                 ", cdEndereco=" + cdEndereco +
                 ", nmRua='" + nmRua + '\'' +
-                ", nmBairro='" + nmBairro + '\'' +
                 ", nrRua=" + nrRua +
                 '}';
     }

@@ -21,6 +21,7 @@ public class Livro {
     private double precoVenda;
 
     public Livro() {
+        this.listaAutor = new ArrayList<>();
     }
 
     public Livro(int cdLivro, Editora editora, ArrayList<Autor> listaAutor, String anoLancamento, Genero genero, int nrPaginas, double qtdEstoque, double precoVenda) {
@@ -32,6 +33,7 @@ public class Livro {
         this.nrPaginas = nrPaginas;
         this.qtdEstoque = qtdEstoque;
         this.precoVenda = precoVenda;
+        this.listaAutor = new ArrayList<>();
     }
 
     public int getCdLivro() {
