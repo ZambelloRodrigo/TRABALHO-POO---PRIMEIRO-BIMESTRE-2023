@@ -81,14 +81,19 @@ public class Main {
         Venda venda = new Venda();
         String[] options = {"Opção 1 - Avista", "Opção 2 - Prazo"};
         int selectedOption = JOptionPane.showOptionDialog(null, "Selecione a forma de pagamento", "Seleção", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
-        if(selectedOption == 1){
+        if(selectedOption == 0){
             venda.setFormaPagamento(formaPagamento1);
-        } else if (selectedOption == 2) {
+        } else if (selectedOption == 1) {
             venda.setFormaPagamento(formaPagamento2);
         } else {
             JOptionPane.showMessageDialog(null, "Erro - Digite uma forma de pagamento válida.");
         }
+        venda.setCliente(cliente1);
+        venda.setCdVenda(1);
+        venda.getListaLivro().add(livro1);
+        venda.getListaLivro().add(livro2);
+        venda.getListaLivro().add(livro3);
 
-
+        System.out.println(venda.toString());
     }
 }

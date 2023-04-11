@@ -17,13 +17,14 @@ public class Cliente {
   private ArrayList<Endereco> listaEndereco;
 
     public Cliente() {
+        this.listaEndereco = new ArrayList<>();
     }
 
     public Cliente(int cdCliente, String nmCliente, String nrCpf, ArrayList<Endereco> listaEndereco) {
         this.cdCliente = cdCliente;
         this.nmCliente = nmCliente;
         this.nrCpf = nrCpf;
-        this.listaEndereco = listaEndereco;
+        this.listaEndereco = new ArrayList<>();
     }
 
     public int getCdCliente() {

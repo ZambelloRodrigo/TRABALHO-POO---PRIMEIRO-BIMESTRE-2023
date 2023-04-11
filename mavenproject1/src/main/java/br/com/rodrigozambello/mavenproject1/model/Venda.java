@@ -18,14 +18,15 @@ public class Venda {
     private double vlTotal;
 
     public Venda() {
+        this.listaLivro = new ArrayList<>();
     }
 
     public Venda(int cdVenda, Cliente cliente, ArrayList<Livro> listaLivro, FormaPagamento formaPagamento, double vlTotal) {
         this.cdVenda = cdVenda;
         this.cliente = cliente;
-        this.listaLivro = listaLivro;
         this.formaPagamento = formaPagamento;
         this.vlTotal = vlTotal;
+        this.listaLivro = new ArrayList<>();
     }
 
     public int getCdVenda() {
