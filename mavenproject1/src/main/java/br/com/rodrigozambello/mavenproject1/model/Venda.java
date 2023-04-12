@@ -14,11 +14,13 @@ public class Venda {
     private int cdVenda;
     private Cliente cliente;
     private ArrayList<Livro> listaLivro;
+    private ArrayList<VendaLivro> listaVendaLivro;
     private FormaPagamento formaPagamento;
     private double vlTotal;
 
     public Venda() {
         this.listaLivro = new ArrayList<>();
+        this.listaVendaLivro = new ArrayList<>();
     }
 
     public Venda(int cdVenda, Cliente cliente, ArrayList<Livro> listaLivro, FormaPagamento formaPagamento, double vlTotal) {
@@ -67,6 +69,33 @@ public class Venda {
 
     public void setVlTotal(double vlTotal) {
         this.vlTotal = vlTotal;
+    }
+
+    public ArrayList<VendaLivro> getListaVendaLivro() {
+        return listaVendaLivro;
+    }
+
+    public void setListaVendaLivro(ArrayList<VendaLivro> listaVendaLivro) {
+        this.listaVendaLivro = listaVendaLivro;
+    }
+
+    public String retornaNota(){
+        String auxiliar = "";
+        for(int i = 0; i < listaLivro.size(); i++){
+            auxiliar =  auxiliar + (listaLivro.get(i).getNmLivro() +
+                        " - Vl Unit: "+listaLivro.get(i).getPrecoVenda() +
+                        " - Quantidade: " + listaVendaLivro.get(i).getQtdVendaLivro()+
+                        " - Desconto: " + listaVendaLivro.get(i).getVlDesconto()+"\n");
+        }
+
+        return " -- Venda --" +
+                "\nN° Nota Fiscal = " + cdVenda +
+                "\nForma de Pagamento = " + formaPagamento.getDsFormaPagamento() +
+                "\nValor = R$" + vlTotal +
+                "\nCliente = " + cliente.getNmCliente() +
+                "\nLivros =" + auxiliar
+                ;
+
     }
 
     @Override

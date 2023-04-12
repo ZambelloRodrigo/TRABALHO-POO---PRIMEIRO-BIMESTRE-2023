@@ -40,6 +40,7 @@ public class Main {
 
         Livro livro1 = new Livro();
         livro1.setCdLivro(1);
+        livro1.setNmLivro("HarryPotter");
         livro1.setAnoLancamento("2020");
         livro1.setEditora(editora1);
         livro1.setGenero(genero1);
@@ -51,6 +52,7 @@ public class Main {
 
         Livro livro2 = new Livro();
         livro2.setCdLivro(2);
+        livro2.setNmLivro("Senhor dos Aneis");
         livro2.setAnoLancamento("2008");
         livro2.setEditora(editora2);
         livro2.setGenero(genero2);
@@ -61,6 +63,7 @@ public class Main {
 
         Livro livro3 = new Livro();
         livro3.setCdLivro(3);
+        livro3.setNmLivro("Casa do Dragão");
         livro3.setAnoLancamento("2005");
         livro3.setEditora(editora3);
         livro3.setGenero(genero3);
@@ -76,11 +79,26 @@ public class Main {
         cliente1.setCdCliente(1);
         cliente1.setNmCliente("Boni Rustico");
         cliente1.setNrCpf("11145489");
-        cliente1.getListaEndereco().add(endereco);
+        cliente1.setEndereco(endereco);
 
         Venda venda = new Venda();
+        venda.setCliente(cliente1);
+        venda.setCdVenda(1);
+        venda.getListaLivro().add(livro1);
+        venda.getListaLivro().add(livro2);
+        venda.getListaLivro().add(livro3);
+
+        VendaLivro vendaLivro1 = new VendaLivro(livro1, 10, 10);
+        VendaLivro vendaLivro2 = new VendaLivro(livro2, 2, 5);
+        VendaLivro vendaLivro3 = new VendaLivro(livro3, 5, 3);
+
+
+        venda.setVlTotal((vendaLivro1.getVlVendaLivro() +
+                          vendaLivro2.getVlVendaLivro() +
+                          vendaLivro3.getVlVendaLivro()));
+
         String[] options = {"Opção 1 - Avista", "Opção 2 - Prazo"};
-        int selectedOption = JOptionPane.showOptionDialog(null, "Selecione a forma de pagamento", "Seleção", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+        int selectedOption = JOptionPane.showOptionDialog(null, "Total da conta: "+ venda.getVlTotal() + "\n" + "Deseja pagar de que forma: ", "Selecione a forma de pagamento", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
         if(selectedOption == 0){
             venda.setFormaPagamento(formaPagamento1);
         } else if (selectedOption == 1) {
@@ -88,11 +106,10 @@ public class Main {
         } else {
             JOptionPane.showMessageDialog(null, "Erro - Digite uma forma de pagamento válida.");
         }
-        venda.setCliente(cliente1);
-        venda.setCdVenda(1);
-        venda.getListaLivro().add(livro1);
-        venda.getListaLivro().add(livro2);
-        venda.getListaLivro().add(livro3);
+        venda.getListaVendaLivro().add(vendaLivro1);
+        venda.getListaVendaLivro().add(vendaLivro2);
+        venda.getListaVendaLivro().add(vendaLivro3);
+        System.out.println(venda.retornaNota());
 
         System.out.println(venda.toString());
     }
