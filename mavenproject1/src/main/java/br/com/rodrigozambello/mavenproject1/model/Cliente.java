@@ -18,13 +18,16 @@ public class Cliente {
 
     public Cliente() {
         this.listaEndereco = new ArrayList<>();
+        this.validaEndereco();
     }
 
     public Cliente(int cdCliente, String nmCliente, String nrCpf, ArrayList<Endereco> listaEndereco) {
+        
         this.cdCliente = cdCliente;
         this.nmCliente = nmCliente;
         this.nrCpf = nrCpf;
         this.listaEndereco = new ArrayList<>();
+        this.validaEndereco();
     }
 
     public int getCdCliente() {
@@ -58,7 +61,16 @@ public class Cliente {
     public void setListaEndereco(ArrayList<Endereco> listaEndereco) {
         this.listaEndereco = listaEndereco;
     }
-
+    
+    // Valida se o endereço esta preenchido.
+    private void validaEndereco(){
+        if(this.getListaEndereco().isEmpty()){;
+            System.out.println("Acessou");
+            System.exit(cdCliente);
+        }
+        
+    }
+    
     @Override
     public String toString() {
         return "Cliente{" +

@@ -68,6 +68,7 @@ public class Venda {
     public void setVlTotal(double vlTotal) {
         this.vlTotal = vlTotal;
     }
+    
 
     @Override
     public String toString() {

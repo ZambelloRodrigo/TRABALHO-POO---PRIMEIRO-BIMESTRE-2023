@@ -16,11 +16,11 @@ import javax.swing.*;
 public class Main {
 
     public static void main(String[] args) {
-        Pais pais = new Pais(1, "Brasil");
+       /* Pais pais = new Pais(1, "Brasil");
         Estado estado = new Estado(pais, 1, "Parana","PR");
         Cidade cidade = new Cidade(estado, 1 ,"Toledo");
         Bairro bairro = new Bairro(cidade, 1 , "Santa Maria");
-        Endereco endereco = new Endereco(bairro, 1, "Avenida Parigot", 255);
+        Endereco endereco = new Endereco(bairro, 1, "Avenida Parigot", 255);*/
 
         //Endereco endereco2 = new Endereco(bairro, 2, "Rua Santa Maria", 152);
 
@@ -76,11 +76,15 @@ public class Main {
         cliente1.setCdCliente(1);
         cliente1.setNmCliente("Boni Rustico");
         cliente1.setNrCpf("11145489");
-        cliente1.getListaEndereco().add(endereco);
+        //cliente1.getListaEndereco().add(endereco);
 
         Venda venda = new Venda();
+        
         String[] options = {"Opção 1 - Avista", "Opção 2 - Prazo"};
-        int selectedOption = JOptionPane.showOptionDialog(null, "Selecione a forma de pagamento", "Seleção", JOptionPane.DEFAULT_OPTION, JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
+        int selectedOption = JOptionPane.showOptionDialog(null, ""
+                + "Selecione a forma de pagamento", ""
+                        + "Seleção", JOptionPane.DEFAULT_OPTION, 
+                        JOptionPane.PLAIN_MESSAGE, null, options, options[0]);
         if(selectedOption == 0){
             venda.setFormaPagamento(formaPagamento1);
         } else if (selectedOption == 1) {
@@ -88,6 +92,7 @@ public class Main {
         } else {
             JOptionPane.showMessageDialog(null, "Erro - Digite uma forma de pagamento válida.");
         }
+        
         venda.setCliente(cliente1);
         venda.setCdVenda(1);
         venda.getListaLivro().add(livro1);
