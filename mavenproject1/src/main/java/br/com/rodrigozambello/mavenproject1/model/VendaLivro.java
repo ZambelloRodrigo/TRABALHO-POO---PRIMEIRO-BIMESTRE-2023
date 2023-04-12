@@ -1,43 +1,27 @@
 package br.com.rodrigozambello.mavenproject1.model;
 
 public class VendaLivro {
-    private int idVendaLivro;
-    private Venda venda;
     private Livro livro;
     private int qtdVendaLivro;
     private double vlVendaLivro;
-
-    public VendaLivro(int idVendaLivro, Venda venda, Livro livro, int qtdVendaLivro, double vlVendaLivro) {
-        this.idVendaLivro = idVendaLivro;
-        this.venda = venda;
-        this.livro = livro;
-        this.qtdVendaLivro = qtdVendaLivro;
-        this.vlVendaLivro = vlVendaLivro;
-    }
+    private double vlDesconto;
 
     public VendaLivro() {
     }
 
-    public int getIdVendaLivro() {
-        return idVendaLivro;
+    public VendaLivro(Livro livro, int qtdVendaLivro, double vlDesconto) {
+        this.livro = livro;
+        this.qtdVendaLivro = qtdVendaLivro;
+        this.vlDesconto = vlDesconto;
+        calculaVlLiquido();
     }
 
-    public void setIdVendaLivro(int idVendaLivro) {
-        this.idVendaLivro = idVendaLivro;
-    }
-
-    public Venda getVenda() {
-        return venda;
-    }
-
-    public void setVenda(Venda venda) {
-        this.venda = venda;
-    }
-
-    public Livro getLivro(){
+    public Livro getLivro() {
         return livro;
     }
+
     public void setLivro(Livro livro) {
+
         this.livro = livro;
     }
 
@@ -57,14 +41,34 @@ public class VendaLivro {
         this.vlVendaLivro = vlVendaLivro;
     }
 
+    public double getVlDesconto() {
+        return vlDesconto;
+    }
+
+    public void setVlDesconto(double vlDesconto) {
+        this.vlDesconto = vlDesconto;
+    }
+
+    private void calculaVlLiquido(){
+        double auxiliar;
+        auxiliar = livro.getPrecoVenda() * this.qtdVendaLivro;
+        this.vlVendaLivro = auxiliar - vlDesconto;
+        calculaEstoque();
+    }
+    private void calculaEstoque(){
+        double auxiliar;
+        auxiliar = livro.getQtdEstoque() - this.qtdVendaLivro;
+        livro.setQtdEstoque(auxiliar);
+    }
+
     @Override
     public String toString() {
         return "VendaLivro{" +
-                "idVendaLivro=" + idVendaLivro +
-                ", venda=" + venda +
-                ", livro=" + livro +
+                "livro=" + livro +
                 ", qtdVendaLivro=" + qtdVendaLivro +
                 ", vlVendaLivro=" + vlVendaLivro +
+                ", vlDesconto=" + vlDesconto +
                 '}';
     }
 }
+

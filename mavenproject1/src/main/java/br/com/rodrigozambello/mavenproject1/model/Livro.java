@@ -12,6 +12,7 @@ import java.util.ArrayList;
  */
 public class Livro {
     private int cdLivro;
+    private String nmLivro;
     private Editora editora;
     private ArrayList<Autor>listaAutor;
     private String anoLancamento;
@@ -24,7 +25,7 @@ public class Livro {
         this.listaAutor = new ArrayList<>();
     }
 
-    public Livro(int cdLivro, Editora editora, ArrayList<Autor> listaAutor, String anoLancamento, Genero genero, int nrPaginas, double qtdEstoque, double precoVenda) {
+    public Livro(int cdLivro, Editora editora, ArrayList<Autor> listaAutor, String anoLancamento, Genero genero, int nrPaginas, double qtdEstoque, double precoVenda, String nmLivro) {
         this.cdLivro = cdLivro;
         this.editora = editora;
         this.listaAutor = listaAutor;
@@ -33,7 +34,16 @@ public class Livro {
         this.nrPaginas = nrPaginas;
         this.qtdEstoque = qtdEstoque;
         this.precoVenda = precoVenda;
+        this.nmLivro = nmLivro;
         this.listaAutor = new ArrayList<>();
+    }
+
+    public String getNmLivro() {
+        return nmLivro;
+    }
+
+    public void setNmLivro(String nmLivro) {
+        this.nmLivro = nmLivro;
     }
 
     public int getCdLivro() {
@@ -104,6 +114,7 @@ public class Livro {
     public String toString() {
         return "Livro{" +
                 "cdLivro=" + cdLivro +
+                ", nmLivro=" + nmLivro +
                 ", editora=" + editora +
                 ", listaAutor=" + listaAutor +
                 ", anoLancamento='" + anoLancamento + '\'' +

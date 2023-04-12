@@ -14,17 +14,17 @@ public class Cliente {
   private int cdCliente;
   private String nmCliente;
   private String nrCpf;
-  private ArrayList<Endereco> listaEndereco;
+  private Endereco endereco;
+
 
     public Cliente() {
-        this.listaEndereco = new ArrayList<>();
     }
 
-    public Cliente(int cdCliente, String nmCliente, String nrCpf, ArrayList<Endereco> listaEndereco) {
+    public Cliente(int cdCliente, String nmCliente, String nrCpf, Endereco endereco) {
         this.cdCliente = cdCliente;
         this.nmCliente = nmCliente;
         this.nrCpf = nrCpf;
-        this.listaEndereco = new ArrayList<>();
+        this.endereco = endereco;
     }
 
     public int getCdCliente() {
@@ -51,12 +51,16 @@ public class Cliente {
         this.nrCpf = nrCpf;
     }
 
-    public ArrayList<Endereco> getListaEndereco() {
-        return listaEndereco;
+    public Endereco getEndereco() {
+        return endereco;
     }
 
-    public void setListaEndereco(ArrayList<Endereco> listaEndereco) {
-        this.listaEndereco = listaEndereco;
+    public void setEndereco(Endereco endereco) {
+        this.endereco = endereco;
+    }
+
+    public void mostrarVenda(){
+
     }
 
     @Override
@@ -65,7 +69,7 @@ public class Cliente {
                 "cdCliente=" + cdCliente +
                 ", nmCliente='" + nmCliente + '\'' +
                 ", nrCpf='" + nrCpf + '\'' +
-                ", listaEndereco=" + listaEndereco +
+                ", endereco=" + endereco +
                 '}';
     }
 }
