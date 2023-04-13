@@ -59,10 +59,7 @@ public class Cliente {
         this.endereco = endereco;
     }
 
-    public void mostrarVenda(){
-
-    }
-
+    
     @Override
     public String toString() {
         return "Cliente{" +

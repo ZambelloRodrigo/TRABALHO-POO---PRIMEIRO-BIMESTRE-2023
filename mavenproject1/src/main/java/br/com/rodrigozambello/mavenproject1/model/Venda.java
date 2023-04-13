@@ -21,6 +21,7 @@ public class Venda {
     public Venda() {
         this.listaLivro = new ArrayList<>();
         this.listaVendaLivro = new ArrayList<>();
+        
     }
 
     public Venda(int cdVenda, Cliente cliente, ArrayList<Livro> listaLivro, FormaPagamento formaPagamento, double vlTotal) {
@@ -29,6 +30,7 @@ public class Venda {
         this.formaPagamento = formaPagamento;
         this.vlTotal = vlTotal;
         this.listaLivro = new ArrayList<>();
+        validaEndereco();
     }
 
     public int getCdVenda() {
@@ -37,14 +39,19 @@ public class Venda {
 
     public void setCdVenda(int cdVenda) {
         this.cdVenda = cdVenda;
+        
     }
 
     public Cliente getCliente() {
         return cliente;
+        
     }
 
     public void setCliente(Cliente cliente) {
         this.cliente = cliente;
+        if(this.cliente.getEndereco() == null){
+            validaEndereco();
+        }
     }
 
     public ArrayList<Livro> getListaLivro() {
@@ -78,6 +85,13 @@ public class Venda {
     public void setListaVendaLivro(ArrayList<VendaLivro> listaVendaLivro) {
         this.listaVendaLivro = listaVendaLivro;
     }
+
+    private void validaEndereco(){
+        System.out.println("Favor Cadastrar o Endereco do Cliente");
+        System.exit(0);
+
+    }
+    
 
     public String retornaNota(){
         String auxiliar = "";

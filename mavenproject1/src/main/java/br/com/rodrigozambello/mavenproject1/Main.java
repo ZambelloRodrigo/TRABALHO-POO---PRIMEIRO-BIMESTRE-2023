@@ -16,11 +16,11 @@ import javax.swing.*;
 public class Main {
 
     public static void main(String[] args) {
-        Pais pais = new Pais(1, "Brasil");
+        /*Pais pais = new Pais(1, "Brasil");
         Estado estado = new Estado(pais, 1, "Parana","PR");
         Cidade cidade = new Cidade(estado, 1 ,"Toledo");
         Bairro bairro = new Bairro(cidade, 1 , "Santa Maria");
-        Endereco endereco = new Endereco(bairro, 1, "Avenida Parigot", 255);
+        Endereco endereco = new Endereco(bairro, 1, "Avenida Parigot", 255);*/
 
         //Endereco endereco2 = new Endereco(bairro, 2, "Rua Santa Maria", 152);
 
@@ -79,7 +79,7 @@ public class Main {
         cliente1.setCdCliente(1);
         cliente1.setNmCliente("Boni Rustico");
         cliente1.setNrCpf("11145489");
-        cliente1.setEndereco(endereco);
+        //cliente1.setEndereco(endereco);
 
         Venda venda = new Venda();
         venda.setCliente(cliente1);
