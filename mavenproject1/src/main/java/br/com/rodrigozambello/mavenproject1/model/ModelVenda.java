@@ -89,16 +89,16 @@ public class ModelVenda {
             auxiliar =  auxiliar + (listaLivro.get(i).getNmLivro() +
                         " - Vl Unit: "+listaLivro.get(i).getPrecoVenda() +
                         " - Quantidade: " + listaVendaLivro.get(i).getQtdVendaLivro()+
+                        " - Total: " + listaVendaLivro.get(i).getQtdVendaLivro()*listaLivro.get(i).getPrecoVenda()+
                         " - Desconto: " + listaVendaLivro.get(i).getVlDesconto()+"\n");
         }
 
         return " -- Venda --" +
                 "\nN° Nota Fiscal = " + cdVenda +
                 "\nForma de Pagamento = " + formaPagamento.getDsFormaPagamento() +
-                "\nValor = R$" + vlTotal +
                 "\nCliente = " + cliente.getNmCliente() +
-                "\nLivros = " + auxiliar
-                ;
+                "\nLivros = " + auxiliar +
+                "\nValor Total = R$" + vlTotal;
 
     }
 

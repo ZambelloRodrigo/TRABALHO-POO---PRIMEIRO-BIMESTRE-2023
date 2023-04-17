@@ -88,10 +88,10 @@ public class Main {
         venda.getListaLivro().add(livro2);
         venda.getListaLivro().add(livro3);
 
-        try {
+        
             
         ModelVendaLivro vendaLivro1 = new ModelVendaLivro(livro1, 10, 10);
-        ModelVendaLivro vendaLivro2 = new ModelVendaLivro(livro2, 2,-10);
+        ModelVendaLivro vendaLivro2 = new ModelVendaLivro(livro2, 2,10);
         ModelVendaLivro vendaLivro3 = new ModelVendaLivro(livro3, 5, 3);
             
             venda.setVlTotal((vendaLivro1.getVlVendaLivro() +
@@ -114,9 +114,6 @@ public class Main {
 
         System.out.println(venda.toString());
         
-        } catch (Exception e) {
-            System.out.println(e.getMessage());
-        }
         
         
     }

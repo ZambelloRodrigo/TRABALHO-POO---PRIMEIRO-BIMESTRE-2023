@@ -59,7 +59,7 @@ public class ModelVendaLivro {
     private void calculaVlLiquido(){
         double auxiliar;
         auxiliar = livro.getPrecoVenda() * this.qtdVendaLivro;
-        this.vlVendaLivro = auxiliar - getVlDesconto();
+        this.vlVendaLivro = auxiliar - vlDesconto;
         calculaEstoque();
     }
     
