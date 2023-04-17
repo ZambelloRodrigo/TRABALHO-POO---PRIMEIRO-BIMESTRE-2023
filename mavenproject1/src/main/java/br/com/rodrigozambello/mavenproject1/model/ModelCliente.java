@@ -10,17 +10,17 @@ import java.util.ArrayList;
  *
  * @author rodrigo
  */
-public class Cliente {
+public class ModelCliente {
   private int cdCliente;
   private String nmCliente;
   private String nrCpf;
-  private Endereco endereco;
+  private ModelEndereco endereco;
 
 
-    public Cliente() {
+    public ModelCliente() {
     }
 
-    public Cliente(int cdCliente, String nmCliente, String nrCpf, Endereco endereco) {
+    public ModelCliente(int cdCliente, String nmCliente, String nrCpf, ModelEndereco endereco) {
         this.cdCliente = cdCliente;
         this.nmCliente = nmCliente;
         this.nrCpf = nrCpf;
@@ -51,11 +51,11 @@ public class Cliente {
         this.nrCpf = nrCpf;
     }
 
-    public Endereco getEndereco() {
+    public ModelEndereco getEndereco() {
         return endereco;
     }
 
-    public void setEndereco(Endereco endereco) {
+    public void setEndereco(ModelEndereco endereco) {
         this.endereco = endereco;
     }
 

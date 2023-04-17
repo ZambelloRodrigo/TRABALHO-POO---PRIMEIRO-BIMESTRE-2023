@@ -8,13 +8,13 @@ package br.com.rodrigozambello.mavenproject1.model;
  *
  * @author rodrigo
  */
-public class Pais {
+public class ModelPais {
   private int cdPais;
   private String nmPais;
 
-    public Pais() {
+    public ModelPais() {
     }
-    public Pais(int cdPais, String nmPais) {
+    public ModelPais(int cdPais, String nmPais) {
         this.cdPais = cdPais;
         this.nmPais = nmPais;
     }

@@ -4,26 +4,27 @@
  */
 package br.com.rodrigozambello.mavenproject1.model;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 /**
  *
  * @author rodrigo
  */
-public class Venda {
+public class ModelVenda {
     private int cdVenda;
-    private Cliente cliente;
-    private ArrayList<Livro> listaLivro;
-    private ArrayList<VendaLivro> listaVendaLivro;
-    private FormaPagamento formaPagamento;
+    private ModelCliente cliente;
+    private ArrayList<ModelLivro> listaLivro;
+    private ArrayList<ModelVendaLivro> listaVendaLivro;
+    private ModelFormaPagamento formaPagamento;
     private double vlTotal;
 
-    public Venda() {
+    public ModelVenda() {
         this.listaLivro = new ArrayList<>();
         this.listaVendaLivro = new ArrayList<>();
     }
 
-    public Venda(int cdVenda, Cliente cliente, ArrayList<Livro> listaLivro, FormaPagamento formaPagamento, double vlTotal) {
+    public ModelVenda(int cdVenda, ModelCliente cliente, ArrayList<ModelLivro> listaLivro, ModelFormaPagamento formaPagamento, double vlTotal) {
         this.cdVenda = cdVenda;
         this.cliente = cliente;
         this.formaPagamento = formaPagamento;
@@ -39,27 +40,27 @@ public class Venda {
         this.cdVenda = cdVenda;
     }
 
-    public Cliente getCliente() {
+    public ModelCliente getCliente() {
         return cliente;
     }
 
-    public void setCliente(Cliente cliente) {
+    public void setCliente(ModelCliente cliente) {
         this.cliente = cliente;
     }
 
-    public ArrayList<Livro> getListaLivro() {
+    public ArrayList<ModelLivro> getListaLivro() {
         return listaLivro;
     }
 
-    public void setListaLivro(ArrayList<Livro> listaLivro) {
+    public void setListaLivro(ArrayList<ModelLivro> listaLivro) {
         this.listaLivro = listaLivro;
     }
 
-    public FormaPagamento getFormaPagamento() {
+    public ModelFormaPagamento getFormaPagamento() {
         return formaPagamento;
     }
 
-    public void setFormaPagamento(FormaPagamento formaPagamento) {
+    public void setFormaPagamento(ModelFormaPagamento formaPagamento) {
         this.formaPagamento = formaPagamento;
     }
 
@@ -68,14 +69,17 @@ public class Venda {
     }
 
     public void setVlTotal(double vlTotal) {
-        this.vlTotal = vlTotal;
+        DecimalFormat vlTotalFormatado = new DecimalFormat("#.##");
+        String formatei = vlTotalFormatado.format(vlTotal);
+        this.vlTotal = Double.parseDouble(formatei.replace(',', '.'));
+        
     }
-
-    public ArrayList<VendaLivro> getListaVendaLivro() {
+    
+    public ArrayList<ModelVendaLivro> getListaVendaLivro() {
         return listaVendaLivro;
     }
 
-    public void setListaVendaLivro(ArrayList<VendaLivro> listaVendaLivro) {
+    public void setListaVendaLivro(ArrayList<ModelVendaLivro> listaVendaLivro) {
         this.listaVendaLivro = listaVendaLivro;
     }
 
@@ -93,7 +97,7 @@ public class Venda {
                 "\nForma de Pagamento = " + formaPagamento.getDsFormaPagamento() +
                 "\nValor = R$" + vlTotal +
                 "\nCliente = " + cliente.getNmCliente() +
-                "\nLivros =" + auxiliar
+                "\nLivros = " + auxiliar
                 ;
 
     }

@@ -8,27 +8,27 @@ package br.com.rodrigozambello.mavenproject1.model;
  *
  * @author rodrigo
  */
-public class Endereco {
-    private Bairro bairro;
+public class ModelEndereco {
+    private ModelBairro bairro;
     private int cdEndereco;
     private String nmRua;
     private int nrRua;
 
-    public Endereco() {
+    public ModelEndereco() {
     }
 
-    public Endereco(Bairro bairro, int cdEndereco, String nmRua, int nrRua) {
+    public ModelEndereco(ModelBairro bairro, int cdEndereco, String nmRua, int nrRua) {
         this.bairro = bairro;
         this.cdEndereco = cdEndereco;
         this.nmRua = nmRua;
         this.nrRua = nrRua;
     }
 
-    public Bairro getBairro() {
+    public ModelBairro getBairro() {
         return bairro;
     }
 
-    public void setBairro(Bairro bairro) {
+    public void setBairro(ModelBairro bairro) {
         this.bairro = bairro;
     }
 

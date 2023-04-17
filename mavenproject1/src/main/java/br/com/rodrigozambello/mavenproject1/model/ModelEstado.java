@@ -10,27 +10,27 @@ import java.util.ArrayList;
  *
  * @author rodrigo
  */
-public class Estado {
-    private Pais pais;
+public class ModelEstado {
+    private ModelPais pais;
     private int cdEstado;
     private String nmEstado;
     private String siglaUf;
 
-    public Estado() {
+    public ModelEstado() {
     }
 
-    public Estado(Pais pais, int cdEstado, String nmEstado, String siglaUf) {
+    public ModelEstado(ModelPais pais, int cdEstado, String nmEstado, String siglaUf) {
         this.pais = pais;
         this.cdEstado = cdEstado;
         this.nmEstado = nmEstado;
         this.siglaUf = siglaUf;
     }
 
-    public Pais getPais() {
+    public ModelPais getPais() {
         return pais;
     }
 
-    public void setPais(Pais pais) {
+    public void setPais(ModelPais pais) {
         this.pais = pais;
     }
 

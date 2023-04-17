@@ -10,22 +10,22 @@ import java.util.ArrayList;
  *
  * @author rodrigo
  */
-public class Livro {
+public class ModelLivro {
     private int cdLivro;
     private String nmLivro;
-    private Editora editora;
-    private ArrayList<Autor>listaAutor;
+    private ModelEditora editora;
+    private ArrayList<ModelAutor>listaAutor;
     private String anoLancamento;
-    private Genero genero;
+    private ModelGenero genero;
     private int nrPaginas;
     private double qtdEstoque;
     private double precoVenda;
 
-    public Livro() {
+    public ModelLivro() {
         this.listaAutor = new ArrayList<>();
     }
 
-    public Livro(int cdLivro, Editora editora, ArrayList<Autor> listaAutor, String anoLancamento, Genero genero, int nrPaginas, double qtdEstoque, double precoVenda, String nmLivro) {
+    public ModelLivro(int cdLivro, ModelEditora editora, ArrayList<ModelAutor> listaAutor, String anoLancamento, ModelGenero genero, int nrPaginas, double qtdEstoque, double precoVenda, String nmLivro) {
         this.cdLivro = cdLivro;
         this.editora = editora;
         this.listaAutor = listaAutor;
@@ -54,19 +54,19 @@ public class Livro {
         this.cdLivro = cdLivro;
     }
 
-    public Editora getEditora() {
+    public ModelEditora getEditora() {
         return editora;
     }
 
-    public void setEditora(Editora editora) {
+    public void setEditora(ModelEditora editora) {
         this.editora = editora;
     }
 
-    public ArrayList<Autor> getListaAutor() {
+    public ArrayList<ModelAutor> getListaAutor() {
         return listaAutor;
     }
 
-    public void setListaAutor(ArrayList<Autor> listaAutor) {
+    public void setListaAutor(ArrayList<ModelAutor> listaAutor) {
         this.listaAutor = listaAutor;
     }
 
@@ -78,11 +78,11 @@ public class Livro {
         this.anoLancamento = anoLancamento;
     }
 
-    public Genero getGenero() {
+    public ModelGenero getGenero() {
         return genero;
     }
 
-    public void setGenero(Genero genero) {
+    public void setGenero(ModelGenero genero) {
         this.genero = genero;
     }
 

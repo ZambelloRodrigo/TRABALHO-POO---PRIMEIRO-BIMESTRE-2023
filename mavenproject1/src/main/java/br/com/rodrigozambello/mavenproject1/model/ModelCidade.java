@@ -8,26 +8,26 @@ package br.com.rodrigozambello.mavenproject1.model;
  *
  * @author rodrigo
  */
-public class Cidade {
+public class ModelCidade {
 
-    private Estado estado;
+    private ModelEstado estado;
     private int cdCidade;
     private String nmCidade;
 
-    public Cidade() {
+    public ModelCidade() {
     }
 
-    public Cidade(Estado estado, int cdCidade, String nmCidade) {
+    public ModelCidade(ModelEstado estado, int cdCidade, String nmCidade) {
         this.estado = estado;
         this.cdCidade = cdCidade;
         this.nmCidade = nmCidade;
     }
 
-    public Estado getEstado() {
+    public ModelEstado getEstado() {
         return estado;
     }
 
-    public void setEstado(Estado estado) {
+    public void setEstado(ModelEstado estado) {
         this.estado = estado;
     }
 

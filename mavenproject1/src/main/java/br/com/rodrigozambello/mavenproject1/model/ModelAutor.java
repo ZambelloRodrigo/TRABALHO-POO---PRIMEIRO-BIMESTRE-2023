@@ -8,36 +8,36 @@ package br.com.rodrigozambello.mavenproject1.model;
  *
  * @author rodrigo
  */
-public class Editora {
-    private int cdEditora;
-    private String nmEditora;
+public class ModelAutor {
+    private int cdAutor;
+    private String nmAutor;
     private String nrTelefone;
     private String email;
 
-    public Editora() {
+    public ModelAutor() {
     }
 
-    public Editora(int cdEditora, String nmEditora, String nrTelefone, String email) {
-        this.cdEditora = cdEditora;
-        this.nmEditora = nmEditora;
+    public ModelAutor(int cdAutor, String nmAutor, String nrTelefone, String email) {
+        this.cdAutor = cdAutor;
+        this.nmAutor = nmAutor;
         this.nrTelefone = nrTelefone;
         this.email = email;
     }
 
-    public int getCdEditora() {
-        return cdEditora;
+    public int getCdAutor() {
+        return cdAutor;
     }
 
-    public void setCdEditora(int cdEditora) {
-        this.cdEditora = cdEditora;
+    public void setCdAutor(int cdAutor) {
+        this.cdAutor = cdAutor;
     }
 
-    public String getNmEditora() {
-        return nmEditora;
+    public String getNmAutor() {
+        return nmAutor;
     }
 
-    public void setNmEditora(String nmEditora) {
-        this.nmEditora = nmEditora;
+    public void setNmAutor(String nmAutor) {
+        this.nmAutor = nmAutor;
     }
 
     public String getNrTelefone() {
@@ -58,9 +58,9 @@ public class Editora {
 
     @Override
     public String toString() {
-        return "Editora{" +
-                "cdEditora=" + cdEditora +
-                ", nmEditora='" + nmEditora + '\'' +
+        return "Autor{" +
+                "cdAutor=" + cdAutor +
+                ", nmAutor='" + nmAutor + '\'' +
                 ", nrTelefone='" + nrTelefone + '\'' +
                 ", email='" + email + '\'' +
                 '}';

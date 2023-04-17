@@ -1,24 +1,24 @@
 package br.com.rodrigozambello.mavenproject1.model;
 
-public class Bairro {
-    private Cidade cidade;
+public class ModelBairro {
+    private ModelCidade cidade;
     private int cdBairro;
     private String nmBairro;
 
-    public Bairro() {
+    public ModelBairro() {
     }
 
-    public Bairro(Cidade cidade, int cdBairro, String nmBairro) {
+    public ModelBairro(ModelCidade cidade, int cdBairro, String nmBairro) {
         this.cidade = cidade;
         this.cdBairro = cdBairro;
         this.nmBairro = nmBairro;
     }
 
-    public Cidade getCidade() {
+    public ModelCidade getCidade() {
         return cidade;
     }
 
-    public void setCidade(Cidade cidade) {
+    public void setCidade(ModelCidade cidade) {
         this.cidade = cidade;
     }
 

@@ -8,14 +8,14 @@ package br.com.rodrigozambello.mavenproject1.model;
  *
  * @author rodrigo
  */
-public class Genero {
+public class ModelGenero {
     private int cdGenero;
     private String dsGenero;
 
-    public Genero() {
+    public ModelGenero() {
     }
 
-    public Genero(int cdGenero, String dsGenero) {
+    public ModelGenero(int cdGenero, String dsGenero) {
         this.cdGenero = cdGenero;
         this.dsGenero = dsGenero;
     }

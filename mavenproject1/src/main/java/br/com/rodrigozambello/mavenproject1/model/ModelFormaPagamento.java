@@ -8,14 +8,14 @@ package br.com.rodrigozambello.mavenproject1.model;
  *
  * @author rodrigo
  */
-public class FormaPagamento {
+public class ModelFormaPagamento {
     private int cdFormaPagamento;
     private String dsFormaPagamento;
 
-    public FormaPagamento() {
+    public ModelFormaPagamento() {
     }
 
-    public FormaPagamento(int cdFormaPagamento, String dsFormaPagamento) {
+    public ModelFormaPagamento(int cdFormaPagamento, String dsFormaPagamento) {
         this.cdFormaPagamento = cdFormaPagamento;
         this.dsFormaPagamento = dsFormaPagamento;
     }

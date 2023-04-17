@@ -1,26 +1,26 @@
 package br.com.rodrigozambello.mavenproject1.model;
 
-public class VendaLivro {
-    private Livro livro;
+public class ModelVendaLivro {
+    private ModelLivro livro;
     private int qtdVendaLivro;
     private double vlVendaLivro;
     private double vlDesconto;
 
-    public VendaLivro() {
+    public ModelVendaLivro() {
     }
 
-    public VendaLivro(Livro livro, int qtdVendaLivro, double vlDesconto) {
+    public ModelVendaLivro(ModelLivro livro, int qtdVendaLivro, double vlDesconto) {
         this.livro = livro;
         this.qtdVendaLivro = qtdVendaLivro;
         this.vlDesconto = vlDesconto;
-        calculaVlLiquido();
+         calculaVlLiquido();
     }
 
-    public Livro getLivro() {
+    public ModelLivro getLivro() {
         return livro;
     }
 
-    public void setLivro(Livro livro) {
+    public void setLivro(ModelLivro livro) {
 
         this.livro = livro;
     }
@@ -46,15 +46,23 @@ public class VendaLivro {
     }
 
     public void setVlDesconto(double vlDesconto) {
+    if (vlDesconto < 0) {
+        System.out.println("O valor de desconto não pode ser negativo, não será aplicado desconto");
+        this.vlDesconto = 0;
+    } else {
         this.vlDesconto = vlDesconto;
     }
+    
+    calculaVlLiquido();
+}
 
     private void calculaVlLiquido(){
         double auxiliar;
         auxiliar = livro.getPrecoVenda() * this.qtdVendaLivro;
-        this.vlVendaLivro = auxiliar - vlDesconto;
+        this.vlVendaLivro = auxiliar - getVlDesconto();
         calculaEstoque();
     }
+    
     private void calculaEstoque(){
         double auxiliar;
         auxiliar = livro.getQtdEstoque() - this.qtdVendaLivro;
